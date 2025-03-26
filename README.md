@@ -5,3 +5,5 @@ repository of big data course, of open genome 2
 - Arturo Barrantes Chuquimia
 - Danitza Advincula Huaman
 - Ricardo Amiel Acuña 
+
+# INTRODUCTION
