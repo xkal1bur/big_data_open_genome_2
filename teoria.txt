@@ -1,8 +1,22 @@
-1. usamos tableau para crear un dashboard que se actualize periodicamente (cambiamos el archivo en una carpeta y tableau lo revisará una vez al mes para actualizar el dashboard). Al no ser muchos datos, no hay problema con el almacenamiento
-2. si es con contraseñas, guardandolas encriptadas para que en caso de intrusión no sea posible recuperar la información. Si es data sensible de personas, podemos elimiar toda forma de hacer backtracking a los usuarios, eliminando todo lo que los podría identificar.
-3. descargando información de fuentes curadas por profesionales en el caso de, por ejemplo, imágenes médicas. Otro ejemplo sería eliminando periodicamente información falsa que alguien podría haber registrado.
+Parte 1
 
-4. el sharding es la distribución de la base de datos en diferentes servidores o tablas que unidas me den la base de datos lógica total. Permite principalmente el load balancing: procesar una mayor cantidad de request/sec y mantener el performance 
+1. F => Aunque Hadoop tiene a Hive como su versión SQL y el servidor central acciona como maestro dividiendo y paralelizando las consultas, y los workers las ejecutan, NO es un gestor de base de datos, es un framework. 
+2. F => OLAP es utilizada en Business Intelligence, el cual analiza data histórica, por lo cual agiliza las transacciones, pero NO a tiempo real. 
+3. V => La escalabilidad vertical es más costosa porque aumentas la potencia en un solo servidor, mientras que la horizontal consiste en aumentar más servidores, lo que modera de mejor manera el uso entre cada servidor. Big data nació al no poder manejar datos en un solo servidor, ya que se busca flexibilidad añadiendo más servidores y distribuyendo la carga correctamente.
+4. F => El volumen alto de datos es el principal factor diferencial de Big Data, y se necesita almacenar en varios servidores en la nube, no en uno solo.
+5. V => Existen técnicas sin pérdida de datos al hacer compresión, ya que codificamos los datos para la reducción de su tamaño.
+6. F => Muchos sistemas de detección de tránsito por ejemplo, necesitan procesamiento a tiempo real, pero NO es un caso que se necesite siempre, es importante para manejar data grande disponer de datos a tiempo real, pero no siempre será usado frente a un procesamiento por lotes.
+7. V => En casos específicos de detección a tiempo real, la velocidad es primordial, para análisis de data histórica (Business Intelligence) no necesitamos coleccionar datos a tiempo real, necesitamos un modelo preciso que pueda analizar a partir de datos ya existentes nuevas situaciones.
+8. V => Usualmente se manejan bases de datos NoSQL para datos a tiempo real, ya que es como manejar archivos o documentos, los cuales tienen características muy flexibles.
+
+
+Parte 2
+
+1. Usamos tableau para crear un dashboard que se actualize periódicamente (cambiamos el archivo en una carpeta y tableau lo revisará una vez al mes para actualizar el dashboard). Al no ser muchos datos, no hay problema con el almacenamiento.
+2. Si es con contraseñas, guardándolas encriptadas para que en caso de intrusión no sea posible recuperar la información. Si es data sensible de personas, podemos elimiar toda forma de hacer backtracking a los usuarios, eliminando todo lo que los podría identificar, estas 2 situaciones descritas corroboran 2 de las V's que tiene como requisito el uso correcto de Big Data (correcto manejo Volumen de datos y Vulnerabilidad respectivamente).
+3. Descargando información de fuentes curadas por profesionales en el caso de, por ejemplo, imágenes médicas. Otro ejemplo sería eliminando periodicamente información falsa que alguien podría haber registrado, de esta manera corroboro la correcta procedencia de los datos.
+
+4. El sharding es la distribución de la base de datos en diferentes servidores o tablas que unidas me den la base de datos lógica total. Permite principalmente el load balancing: procesar una mayor cantidad de request/sec y mantener el performance 322
 
 5. 
 # fuente: https://explodingtopics.com/blog/data-generated-per-day
