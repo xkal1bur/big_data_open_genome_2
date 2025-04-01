@@ -1,0 +1,15 @@
+1. usamos tableau para crear un dashboard que se actualize periodicamente (cambiamos el archivo en una carpeta y tableau lo revisará una vez al mes para actualizar el dashboard). Al no ser muchos datos, no hay problema con el almacenamiento
+2. si es con contraseñas, guardandolas encriptadas para que en caso de intrusión no sea posible recuperar la información. Si es data sensible de personas, podemos elimiar toda forma de hacer backtracking a los usuarios, eliminando todo lo que los podría identificar.
+3. descargando información de fuentes curadas por profesionales en el caso de, por ejemplo, imágenes médicas. Otro ejemplo sería eliminando periodicamente información falsa que alguien podría haber registrado.
+
+4. el sharding es la distribución de la base de datos en diferentes servidores o tablas que unidas me den la base de datos lógica total. Permite principalmente el load balancing: procesar una mayor cantidad de request/sec y mantener el performance 
+
+5. 
+# fuente: https://explodingtopics.com/blog/data-generated-per-day
+zettabytes_per_year = [2,5,6.5,12.5,15.5,18,26,33,41,64.2,79,97,120,147,181]
+years = [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+from sklearn.linear_model import LinearRegression
+reg = LinearRegression.fit(years, zettabytes_per_year)
+reg.predict([[2035]])
+# 269.19619048 zettabytes
+269.2 zettabytes para el año 2035 = 2.692 * 1e14 GB
